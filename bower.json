@@ -1,0 +1,25 @@
+{
+  "name": "palladio-app",
+  "authors": [
+    "Ethan Jewett <esjewett@gmail.com>"
+  ],
+  "description": "Palladio application",
+  "main": "index.html",
+  "moduleType": [],
+  "keywords": [
+    "Palladio"
+  ],
+  "license": "BSD",
+  "homepage": "http://hdlab.stanford.edu/palladio",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "palladio": ""
+  }
+}

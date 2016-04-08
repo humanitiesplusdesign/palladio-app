@@ -20,7 +20,7 @@ var app = angular.module('palladioApp', [
 
 	// Filters
   'palladioTimelineComponent',
-	'palladioFacetFilter',
+	'palladioFacetComponent',
 	'palladioTimespanFilter',
 	'palladioPartimeFilter',
 	// Views

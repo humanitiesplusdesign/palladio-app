@@ -21,9 +21,7 @@
   ],
   "dependencies": {
     "palladio": "1.2.0-beta.05",
-    "palladio-timeline-component": "~1.0.1"
-  },
-  "resolutions": {
-    "palladio-timeline-component": "~1.0.1"
+    "palladio-timeline-component": "~1.0.1",
+    "palladio-facet-component": "~1.0.0"
   }
 }

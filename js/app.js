@@ -19,7 +19,7 @@ var app = angular.module('palladioApp', [
 	'palladioPalette',
 
 	// Filters
-	'palladioTimelineFilter',
+  'palladioTimelineComponent',
 	'palladioFacetFilter',
 	'palladioTimespanFilter',
 	'palladioPartimeFilter',

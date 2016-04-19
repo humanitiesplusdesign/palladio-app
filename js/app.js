@@ -24,7 +24,7 @@ var app = angular.module('palladioApp', [
 	'palladioTimespanComponent',
 	// Views
 	'palladioListView',
-	'palladioMapView',
+	'palladioMapComponent',
 	'palladioTableView',
 	'palladioSelectionView',
 	'palladioGraphComponent',

@@ -25,6 +25,7 @@
     "palladio-facet-component": "~1.0.0",
     "palladio-timespan-component": "~1.0.0",
     "palladio-graph-component": "~1.0.0",
-    "palladio-map-component": "~1.0.0"
+    "palladio-map-component": "~1.0.0",
+    "palladio-table-component": "~1.0.0"
   }
 }

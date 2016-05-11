@@ -38,20 +38,20 @@ var app = angular.module('palladioApp', [
 		$stateProvider
 			.state('/', {
 				url: '/',
-				templateUrl: 'partials/start.html',
+				templateUrl: 'html/start.html',
 			})
 			.state('/upload', {
 				url: '/upload',
-				templateUrl: 'partials/upload.html',
+				templateUrl: 'html/upload.html',
 				controller: 'UploadRefineCtrl'
 			})
-			.state('/link', {
-				url: '/link',
-				templateUrl: 'partials/link.html'
-			})
+			// .state('/link', {
+			// 	url: '/link',
+			// 	templateUrl: 'html/link.html'
+			// })
 			.state('/visualization', {
 				url: '/visualization',
-				templateUrl: 'partials/visualization.html',
+				templateUrl: 'html/visualization.html',
 				controller: 'VisualizationCtrl',
 				resolve: {
 					data: function (dataService) {

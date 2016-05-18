@@ -4,6 +4,11 @@ var app = angular.module('palladioApp', [
 	'palladio.services',
 	'palladio.directives',
 	'palladio.filters',
+	
+	'palladioApp.directives.files',
+	'palladioApp.directives.file',
+	'palladioApp.directives.refine',
+	'palladioApp.directives.yasgui',
 
 	'ui.codemirror',
 	'ui.bootstrap',
@@ -28,8 +33,7 @@ var app = angular.module('palladioApp', [
 	'palladioTableComponent',
 	'palladioSelectionView',
 	'palladioGraphComponent',
-	'palladioDurationView',
-	'palladioIdiographView']
+	'palladioDurationView']
 	)
 	.config(function($stateProvider, $urlRouterProvider) {
 

@@ -37,13 +37,13 @@ var app = angular.module('palladioApp', [
 	)
 	.config(function($stateProvider, $urlRouterProvider) {
 
-		$urlRouterProvider.otherwise("/");
+		$urlRouterProvider.otherwise("/upload");
 
 		$stateProvider
-			.state('/', {
-				url: '/',
-				templateUrl: 'html/start.html',
-			})
+			// .state('/', {
+			// 	url: '/',
+			// 	templateUrl: 'html/start.html',
+			// })
 			.state('/upload', {
 				url: '/upload',
 				templateUrl: 'html/upload.html',

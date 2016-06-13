@@ -1,7 +1,7 @@
 angular.module('palladioApp.directives.files', [
 	'palladio.services',
 	'palladio'])
-	.directive('filesDirective', function ($rootScope, parseService, dataService, $window) {
+	.directive('filesDirective', function ($rootScope, parseService, dataService, $window, spinnerService, loadService, $http) {
 		var directiveDefObj = {
 			templateUrl: 'html/files.html',
 
@@ -77,8 +77,15 @@ angular.module('palladioApp.directives.files', [
 				};
 
 				scope.loadSample = function() {
-					$window.location = "#/upload?file=sample.json";
-					$window.location.reload();
+					spinnerService.spin();
+					$http.get("sample.json")
+						.success(function(data) {
+							loadService.loadJson(data).then(scope.onLoad);
+						})
+						.error(function() {
+							alert("Seems that something went wrong");
+							spinnerService.hide();
+						});
 				};
 
 

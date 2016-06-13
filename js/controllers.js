@@ -178,7 +178,7 @@ angular.module('palladio.controllers', ['palladio.services', 'palladio'])
 
 		// Alert when leaving
 		$(window).bind('beforeunload', function(){
-			return 'By leaving this page you will loose your work.';
+			return 'By leaving this page you will lose your work.';
 		});
 
 	})

@@ -565,7 +565,8 @@ angular.module('palladio.controllers', ['palladio.services', 'palladio'])
     });
     
     componentService.promiseAdd('table', "#table-view-with-settings", {
-      showSettings: true
+      showSettings: true,
+			maxDisplay: 1000
     });
     
     componentService.promiseAdd('cards', "#card-view-with-settings", {

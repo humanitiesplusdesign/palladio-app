@@ -20,7 +20,7 @@
     "tests"
   ],
   "dependencies": {
-    "palladio": "^1.2.0",
+    "palladio": "^1.2.1",
     "palladio-timeline-component": "~1.0.2",
     "palladio-facet-component": "~1.1.0",
     "palladio-timespan-component": "~1.0.1",

@@ -9,6 +9,7 @@ var app = angular.module('palladioApp', [
 	'palladioApp.directives.file',
 	'palladioApp.directives.refine',
 	'palladioApp.directives.yasgui',
+	'palladioApp.directives.transform',
 
 	'ui.codemirror',
 	'ui.bootstrap',

@@ -4,7 +4,15 @@ angular.module('palladioApp.directives.files', [
 	.directive('filesDirective', function ($rootScope, parseService, dataService, $window, spinnerService, loadService, $http) {
 		var directiveDefObj = {
 			templateUrl: 'html/files.html',
+			controller: function($scope) {
+				$scope.addDimension = function(file) {
+					$scope.selectedFile = file;
+				}
 
+				this.selectedFile = function() {
+					return $scope.selectedFile;
+				}
+			},
 			link: function (scope, element, attrs) {
 
 				// function to parse data

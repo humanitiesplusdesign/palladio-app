@@ -1,0 +1,79 @@
+<!-- Modal -->
+<div class="modal" id="transformModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<!-- Modal Header -->
+			<div class="modal-header">
+				Add dimension
+			</div>
+
+			<!-- Modal Body -->
+			<div class="modal-body">
+			  <div class="row">
+					<div class="col-md-6">
+						<h4>Configure Dimension</h4>
+						<div class="row margin-top">
+							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-right">
+								<label class="inline">Type</label>
+							</div>
+							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+								<ui-select ng-model="transform.type" theme="selectize" ng-disabled="disabled" on-select="selectTransform()">
+									<ui-select-match placeholder="Select">
+										{{$select.selected.label}}
+										<span class="caret"></span>
+									</ui-select-match>
+									<ui-select-choices repeat="type.id as type in transformTypes">
+										<span>{{type.label}}</span><br/>
+										<span class="text-muted">{{type.description}}</span>
+									</ui-select-choices>
+								</ui-select>
+							</div>
+						</div>
+						<div class="row margin-top" ng-repeat="desc in transformTemplate.sourceKeysDescriptions">
+							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-right">
+								<label class="inline">{{desc}}</label>
+							</div>
+							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+								<ui-select ng-model="sourceKeys[$index]" theme="selectize" ng-disabled="disabled"">
+									<ui-select-match placeholder="Select">
+										{{$select.selected.description}}
+										<span class="caret"></span>
+									</ui-select-match>
+									<ui-select-choices repeat="field.key as field in filesCtrl.selectedFile().fields">
+										<span>{{field.description}}</span><br/>
+										<span class="text-muted">{{field.type}}</span>
+									</ui-select-choices>
+								</ui-select>
+							</div>
+						</div>
+						<div class="row margin-top" ng-repeat="desc in transformTemplate.targetKeysDescriptions">
+							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-right">
+								<label class="inline">{{desc}}</label>
+							</div>
+							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+								<input type="text" ng-model="targetKeys[$index]" class="form-control"></input>
+							</div>
+						</div>
+						<div class="row margin-top" ng-repeat="param in transformTemplate.parameters">
+							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-right">
+								<label class="inline">{{param.description}}</label>
+							</div>
+							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+								<input type="text" ng-model="parameterValues[$index]" class="form-control"></input>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<h4>Preview</h4>
+					</div>
+				</div>
+			</div>
+
+			<!-- Modal Footer -->
+			<div class="modal-footer">
+				<button type="button" class="btn" data-dismiss="modal" ng-click="clearFields()">Cancel</button>
+				<button type="button" class="btn btn-default" data-dismiss="modal" ng-click="addTransform()"><i class="fa fa-check margin-right text-primary"></i>Add Dimension</button>
+			</div>
+		</div>
+	</div>
+</div>

@@ -140,7 +140,9 @@ angular.module('palladio.controllers', ['palladio.services', 'palladio'])
 			}
 			// if(loadService.layout()) setTimeout(function() { $location.path('/visualization'); }, 1000);
 			if(loadService.layout()) {
-				$location.path('/visualization');
+				dataService.getData().then(function() {
+					$location.path('/visualization');
+				})
 			}
 
 			var metadata = dataService.getMetadata();

@@ -21,7 +21,7 @@
   ],
   "dependencies": {
     "palladio": "^1.2.5",
-    "palladio-timeline-component": "~1.0.2",
+    "palladio-timeline-component": "1.0.7",
     "palladio-facet-component": "~1.1.0",
     "palladio-timespan-component": "~1.1.0",
     "palladio-graph-component": "~1.0.1",

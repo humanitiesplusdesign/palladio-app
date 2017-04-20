@@ -73,7 +73,7 @@ angular.module('palladio.controllers', ['palladio.services', 'palladio'])
 			url : 'URL'
 		};
 
-		$scope.version = "1.2.9";
+		$scope.version = "1.2";
 
 		$scope.$watch(function(){ return $('#footer').html(); }, function(){
 			$('*[data-toggle="tooltip"]').tooltip({container:'body'});

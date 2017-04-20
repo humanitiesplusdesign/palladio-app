@@ -25,7 +25,7 @@
     "palladio-facet-component": "~1.1.0",
     "palladio-timespan-component": "~1.1.0",
     "palladio-graph-component": "~1.0.1",
-    "palladio-map-component": "~1.1.1",
+    "palladio-map-component": "~1.1.5",
     "palladio-table-component": "~1.1.0",
     "palladio-cards-component": "~1.0.1",
     "YASQE": "https://github.com/YASGUI/YASQE.git#~1.4.0",

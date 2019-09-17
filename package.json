@@ -1,0 +1,18 @@
+{
+  "name": "palladio-app",
+  "description": "Palladio website and reference implementation for the Palladio framework.",
+  "homepage": "http://hdlab.stanford.edu/palladio",
+  "repository": "https://github.com/humanitiesplusdesign/palladio-app",
+  "dependencies": {
+    "YASQE": "https://github.com/YASGUI/YASQE.git#~1.4.0",
+    "YASR": "https://github.com/YASGUI/YASR.git#~1.2.0",
+    "palladio": "https://github.com/simonwiles/palladio#cidr-2019",
+    "palladio-cards-component": "https://github.com/simonwiles/palladio-cards-component#1.1.x",
+    "palladio-facet-component": "https://github.com/simonwiles/palladio-facet-component#1.2.x",
+    "palladio-graph-component": "https://github.com/simonwiles/palladio-graph-component#1.1.x",
+    "palladio-map-component": "https://github.com/simonwiles/palladio-map-component#1.2.x",
+    "palladio-table-component": "https://github.com/simonwiles/palladio-table-component#1.2.x",
+    "palladio-timeline-component": "https://github.com/simonwiles/palladio-timeline-component#1.1.x",
+    "palladio-timespan-component": "https://github.com/simonwiles/palladio-timespan-component#1.2.x"
+  }
+}

@@ -3,6 +3,11 @@
   "description": "Palladio website and reference implementation for the Palladio framework.",
   "homepage": "http://hdlab.stanford.edu/palladio",
   "repository": "https://github.com/humanitiesplusdesign/palladio-app",
+  "scripts": {
+    "build": "NODE_ENV=production webpack",
+    "build-dev": "webpack",
+    "develop": "webpack --mode development --watch"
+  },
   "dependencies": {
     "YASQE": "https://github.com/YASGUI/YASQE.git#~1.4.0",
     "YASR": "https://github.com/YASGUI/YASR.git#~1.2.0",
@@ -14,5 +19,12 @@
     "palladio-table-component": "https://github.com/simonwiles/palladio-table-component#1.2.x",
     "palladio-timeline-component": "https://github.com/simonwiles/palladio-timeline-component#1.1.x",
     "palladio-timespan-component": "https://github.com/simonwiles/palladio-timespan-component#1.2.x"
+  },
+  "devDependencies": {
+    "copy-webpack-plugin": "^5.0.4",
+    "mini-css-extract-plugin": "^0.8.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "webpack": "^4.39.3",
+    "webpack-cli": "^3.3.7"
   }
 }

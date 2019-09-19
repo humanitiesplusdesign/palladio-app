@@ -9,8 +9,8 @@
     "develop": "webpack --mode development --watch"
   },
   "dependencies": {
-    "YASQE": "https://github.com/YASGUI/YASQE.git#~1.4.0",
-    "YASR": "https://github.com/YASGUI/YASR.git#~1.2.0",
+    "YASQE": "https://github.com/TriplyDB/YASGUI.YASQE#2.10.0",
+    "YASR": "https://github.com/TriplyDB/YASGUI.YASQE#1.2.0",
     "palladio": "https://github.com/simonwiles/palladio#cidr-2019",
     "palladio-cards-component": "https://github.com/simonwiles/palladio-cards-component#1.1.x",
     "palladio-facet-component": "https://github.com/simonwiles/palladio-facet-component#1.2.x",

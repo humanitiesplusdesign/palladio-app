@@ -1,11 +1,8 @@
-(Note: These instructions are based on the new forks of palladio updated by the [CIDR team at Stanford University Libraries](https://cidr.stanford.edu) -- they will be adjusted when everything is merged back upstream.)
-
 To build Palladio locally, first [make sure you have yarn installed](https://yarnpkg.com/en/docs/install), then use yarn to install the dependencies and build the assets:
 
 ```
-git clone https://github.com/simonwiles/palladio-app.git
+git clone https://github.com/humanitiesplusdesign/palladio-app.git
 cd palladio-app
-git checkout cidr-2019
 yarn install
 yarn build
 ```
@@ -24,9 +21,8 @@ To run on the latest version of main Palladio framework for testing purposes:
 1) First clone the palladio framework repo, and from inside it run `yarn link`:
 
     ```
-    git clone https://github.com/simonwiles/palladio.git
+    git clone https://github.com/humanitiesplusdesign/palladio.git
     cd palladio
-    git checkout cidr-2019
     yarn link
     ```
 

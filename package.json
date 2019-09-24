@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "YASQE": "https://github.com/TriplyDB/YASGUI.YASQE#2.10.0",
-    "YASR": "https://github.com/TriplyDB/YASGUI.YASQE#1.2.0",
+    "YASR": "https://github.com/TriplyDB/YASGUI.YASR#1.2.0",
     "palladio": "https://github.com/humanitiesplusdesign/palladio#1.3.x",
     "palladio-cards-component": "https://github.com/humanitiesplusdesign/palladio-cards-component#1.1.x",
     "palladio-facet-component": "https://github.com/humanitiesplusdesign/palladio-facet-component#1.2.x",

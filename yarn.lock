@@ -171,17 +171,14 @@
     jquery "~ 1.11.0"
     yasgui-utils "^1.4.1"
 
-"YASR@https://github.com/TriplyDB/YASGUI.YASQE#1.2.0":
+"YASR@https://github.com/TriplyDB/YASGUI.YASR#1.2.0":
   version "1.2.0"
-  resolved "https://github.com/TriplyDB/YASGUI.YASQE#9743be3ff74c62fe7a15c4dfcd36b82c2e5f2a82"
+  resolved "https://github.com/TriplyDB/YASGUI.YASR#28df87eb3a3a55342c6b019d6e51b2796cb5e5cb"
   dependencies:
-    amplify "0.0.11"
-    browserify-shim "~3.2.0"
-    codemirror "~4.2.0"
+    codemirror "^4.2.0"
     jquery "~ 1.11.0"
-    store "^1.3.14"
-    twitter-bootstrap-3.0.0 "^3.0.0"
-    yasgui-utils "^1.0.0"
+    yasgui-utils "^1.1.2"
+    yasgui-yasqe "^1.0.0"
 
 abbrev@1:
   version "1.1.1"
@@ -217,11 +214,6 @@ alphanum-sort@^1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/alphanum-sort/-/alphanum-sort-1.0.2.tgz#97a1119649b211ad33691d9f9f486a8ec9fbe0a3"
   integrity sha1-l6ERlkmyEa0zaR2fn0hqjsn74KM=
-
-amplify@0.0.11:
-  version "0.0.11"
-  resolved "https://registry.yarnpkg.com/amplify/-/amplify-0.0.11.tgz#fd81c7068c862823f2508b8f3c650eb76753f58c"
-  integrity sha1-/YHHBoyGKCPyUIuPPGUOt2dT9Yw=
 
 ansi-colors@^3.0.0:
   version "3.2.4"
@@ -458,16 +450,6 @@ browserify-rsa@^4.0.0:
     bn.js "^4.1.0"
     randombytes "^2.0.1"
 
-browserify-shim@~3.2.0:
-  version "3.2.2"
-  resolved "https://registry.yarnpkg.com/browserify-shim/-/browserify-shim-3.2.2.tgz#cebd3eeb2d43020ed836296bdf7c8e76521a0ed9"
-  integrity sha1-zr0+6y1DAg7YNilr33yOdlIaDtk=
-  dependencies:
-    exposify "~0.1.2"
-    find-parent-dir "~0.1.0"
-    resolve "~0.6.1"
-    through "~2.3.4"
-
 browserify-sign@^4.0.0:
   version "4.0.4"
   resolved "https://registry.yarnpkg.com/browserify-sign/-/browserify-sign-4.0.4.tgz#aa4eb68e5d7b658baa6bf6a57e630cbd7a93d298"
@@ -697,15 +679,15 @@ code-point-at@^1.0.0:
   resolved "https://registry.yarnpkg.com/code-point-at/-/code-point-at-1.1.0.tgz#0d070b4d043a5bea33a2f1a40e2edb3d9a4ccf77"
   integrity sha1-DQcLTQQ6W+ozovGkDi7bPZpMz3c=
 
+codemirror@^4.2.0:
+  version "4.13.0"
+  resolved "https://registry.yarnpkg.com/codemirror/-/codemirror-4.13.0.tgz#209772d38a7bb99647c37b500db121110dd9af6f"
+  integrity sha1-IJdy04p7uZZHw3tQDbEhEQ3Zr28=
+
 codemirror@^5.10.0:
   version "5.48.4"
   resolved "https://registry.yarnpkg.com/codemirror/-/codemirror-5.48.4.tgz#4210fbe92be79a88f0eea348fab3ae78da85ce47"
   integrity sha512-pUhZXDQ6qXSpWdwlgAwHEkd4imA0kf83hINmUEzJpmG80T/XLtDDEzZo8f6PQLuRCcUQhmzqqIo3ZPTRaWByRA==
-
-codemirror@~4.2.0:
-  version "4.2.0"
-  resolved "https://registry.yarnpkg.com/codemirror/-/codemirror-4.2.0.tgz#c80985c6e6cd5464e7b05a907702757382f0fdc5"
-  integrity sha1-yAmFxubNVGTnsFqQdwJ1c4Lw/cU=
 
 collection-visit@^1.0.0:
   version "1.0.0"
@@ -1129,14 +1111,6 @@ detect-libc@^1.0.2:
   resolved "https://registry.yarnpkg.com/detect-libc/-/detect-libc-1.0.3.tgz#fa137c4bd698edf55cd5cd02ac559f91a4c4ba9b"
   integrity sha1-+hN8S9aY7fVc1c0CrFWfkaTEups=
 
-detective@~2.3.0:
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/detective/-/detective-2.3.0.tgz#21e7d2ca80f1af9291b8ffe4ca09b1a9dbdb5ae3"
-  integrity sha1-IefSyoDxr5KRuP/kygmxqdvbWuM=
-  dependencies:
-    escodegen "0.0.15"
-    esprima "1.0.2"
-
 diffie-hellman@^5.0.0:
   version "5.0.3"
   resolved "https://registry.yarnpkg.com/diffie-hellman/-/diffie-hellman-5.0.3.tgz#40e8ee98f55a2149607146921c63e1ae5f3d2875"
@@ -1294,15 +1268,6 @@ escape-string-regexp@^1.0.5:
   resolved "https://registry.yarnpkg.com/escape-string-regexp/-/escape-string-regexp-1.0.5.tgz#1b61c0562190a8dff6ae3bb2cf0200ca130b86d4"
   integrity sha1-G2HAViGQqN/2rjuyzwIAyhMLhtQ=
 
-escodegen@0.0.15:
-  version "0.0.15"
-  resolved "https://registry.yarnpkg.com/escodegen/-/escodegen-0.0.15.tgz#ffda9cb26b70b34f7cc19f1d88756539afb543bd"
-  integrity sha1-/9qcsmtws098wZ8diHVlOa+1Q70=
-  dependencies:
-    esprima ">= 1.0.0"
-  optionalDependencies:
-    source-map ">= 0.1.2"
-
 eslint-scope@^4.0.3:
   version "4.0.3"
   resolved "https://registry.yarnpkg.com/eslint-scope/-/eslint-scope-4.0.3.tgz#ca03833310f6889a3264781aa82e63eb9cfe7848"
@@ -1311,12 +1276,7 @@ eslint-scope@^4.0.3:
     esrecurse "^4.1.0"
     estraverse "^4.1.1"
 
-esprima@1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/esprima/-/esprima-1.0.2.tgz#8039bf9ceac4d9d2c15f623264fb292b5502ceaf"
-  integrity sha1-gDm/nOrE2dLBX2IyZPspK1UCzq8=
-
-"esprima@>= 1.0.0", esprima@^4.0.0:
+esprima@^4.0.0:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/esprima/-/esprima-4.0.1.tgz#13b04cdb3e6c5d19df91ab6987a8695619b0aa71"
   integrity sha512-eGuFFw7Upda+g4p+QHvnW0RyTX/SVeJBDM/gCtMARO0cLuT2HcEKnTPvhjV6aGeqrCB/sbNop0Kszm0jsaWU4A==
@@ -1378,16 +1338,6 @@ expand-tilde@^2.0.0, expand-tilde@^2.0.2:
   integrity sha1-l+gBqgUt8CRU3kawK/YhZCzchQI=
   dependencies:
     homedir-polyfill "^1.0.1"
-
-exposify@~0.1.2:
-  version "0.1.5"
-  resolved "https://registry.yarnpkg.com/exposify/-/exposify-0.1.5.tgz#6a5b56db859070c2e329ccd40e55191ddb57e3d6"
-  integrity sha1-altW24WQcMLjKczUDlUZHdtX49Y=
-  dependencies:
-    detective "~2.3.0"
-    has-require "~1.1.0"
-    through2 "~0.4.0"
-    transformify "~0.1.1"
 
 extend-shallow@^2.0.1:
   version "2.0.1"
@@ -1451,11 +1401,6 @@ find-cache-dir@^2.1.0:
     commondir "^1.0.1"
     make-dir "^2.0.0"
     pkg-dir "^3.0.0"
-
-find-parent-dir@~0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/find-parent-dir/-/find-parent-dir-0.1.0.tgz#101b8eca4fb27b94263187a2fadc56b95caa87d4"
-  integrity sha1-EBuOyk+ye5QmMYei+txWuVyqh9Q=
 
 find-up@^3.0.0:
   version "3.0.0"
@@ -1645,11 +1590,6 @@ has-flag@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/has-flag/-/has-flag-3.0.0.tgz#b5d454dc2199ae225699f3467e5a07f3b955bafd"
   integrity sha1-tdRU3CGZriJWmfNGfloH87lVuv0=
-
-has-require@~1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/has-require/-/has-require-1.1.0.tgz#41e3e8bb8623467893edbc3909a5893de52c76f8"
-  integrity sha1-QePou4YjRniT7bw5CaWJPeUsdvg=
 
 has-symbols@^1.0.0:
   version "1.0.0"
@@ -2061,11 +2001,6 @@ is-wsl@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/is-wsl/-/is-wsl-1.1.0.tgz#1f16e4aa22b04d1336b66188a66af3c600c3a66d"
   integrity sha1-HxbkqiKwTRM2tmGIpmrzxgDDpm0=
-
-isarray@0.0.1:
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/isarray/-/isarray-0.0.1.tgz#8a18acfca9a8f4177e09abfc6038939b05d1eedf"
-  integrity sha1-ihis/Kmo9Bd+Cav8YDiTmwXR7t8=
 
 isarray@1.0.0, isarray@^1.0.0, isarray@~1.0.0:
   version "1.0.0"
@@ -2601,11 +2536,6 @@ object-keys@^1.0.12, object-keys@^1.1.1:
   resolved "https://registry.yarnpkg.com/object-keys/-/object-keys-1.1.1.tgz#1c47f272df277f3b1daf061677d9c82e2322c60e"
   integrity sha512-NuAESUOUMrlIXOfHKzD6bpPu3tYt3xvjNdRIQ+FeT0lNb4K8WR70CaDxhuNguS2XG+GjkyMwOzsN5ZktImfhLA==
 
-object-keys@~0.4.0:
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/object-keys/-/object-keys-0.4.0.tgz#28a6aae7428dd2c3a92f3d95f21335dd204e0336"
-  integrity sha1-KKaq50KN0sOpLz2V8hM13SBOAzY=
-
 object-visit@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/object-visit/-/object-visit-1.0.1.tgz#f79c4493af0c5377b59fe39d395e41042dd045bb"
@@ -2724,37 +2654,37 @@ pako@~1.0.5:
   resolved "https://registry.yarnpkg.com/pako/-/pako-1.0.10.tgz#4328badb5086a426aa90f541977d4955da5c9732"
   integrity sha512-0DTvPVU3ed8+HNXOu5Bs+o//Mbdj9VNQMUOe9oKCwh8l0GNwpTDMKCWbRjgtD291AWnkAgkqA/LOnQS8AmS1tw==
 
-"palladio-cards-component@https://github.com/simonwiles/palladio-cards-component#1.1.x":
+"palladio-cards-component@https://github.com/humanitiesplusdesign/palladio-cards-component#1.1.x":
   version "1.1.0"
-  resolved "https://github.com/simonwiles/palladio-cards-component#021e8288c378a7bfe28e7d153214037ba88db4fa"
+  resolved "https://github.com/humanitiesplusdesign/palladio-cards-component#fe92a316bf4d70bcc6b5f345d5229379143e2f07"
 
-"palladio-facet-component@https://github.com/simonwiles/palladio-facet-component#1.2.x":
+"palladio-facet-component@https://github.com/humanitiesplusdesign/palladio-facet-component#1.2.x":
   version "1.2.0"
-  resolved "https://github.com/simonwiles/palladio-facet-component#0971f8a70399e19e097a4482fcbbc005894f058a"
+  resolved "https://github.com/humanitiesplusdesign/palladio-facet-component#4d32cd6b16f304ca057fa43b2c9d4cd5c1f9cf4b"
 
-"palladio-graph-component@https://github.com/simonwiles/palladio-graph-component#1.1.x":
+"palladio-graph-component@https://github.com/humanitiesplusdesign/palladio-graph-component#1.1.x":
   version "1.1.0"
-  resolved "https://github.com/simonwiles/palladio-graph-component#4b41141175b6a7d5cdd084c7268dcf1c6b8bc48c"
+  resolved "https://github.com/humanitiesplusdesign/palladio-graph-component#d27f5b3fb933b54e4c69790af2e0340d9ab8b4c9"
 
-"palladio-map-component@https://github.com/simonwiles/palladio-map-component#1.2.x":
+"palladio-map-component@https://github.com/humanitiesplusdesign/palladio-map-component#1.2.x":
   version "1.2.0"
-  resolved "https://github.com/simonwiles/palladio-map-component#8b01e9e7a97cd97c1a6f8a8846dc71325de198c6"
+  resolved "https://github.com/humanitiesplusdesign/palladio-map-component#44387131e78bc2898ad9990bb64a056852169ce5"
 
-"palladio-table-component@https://github.com/simonwiles/palladio-table-component#1.2.x":
+"palladio-table-component@https://github.com/humanitiesplusdesign/palladio-table-component#1.2.x":
   version "1.2.0"
-  resolved "https://github.com/simonwiles/palladio-table-component#41a2309349a455f0f5273dc174d942626101290d"
+  resolved "https://github.com/humanitiesplusdesign/palladio-table-component#92c07634dab168a60c3a6581b4538aa5eb6fb5e5"
 
-"palladio-timeline-component@https://github.com/simonwiles/palladio-timeline-component#1.1.x":
+"palladio-timeline-component@https://github.com/humanitiesplusdesign/palladio-timeline-component#1.1.x":
   version "1.1.0"
-  resolved "https://github.com/simonwiles/palladio-timeline-component#7e72bdcb7eaeac234dd0be263199d25b5bc05a65"
+  resolved "https://github.com/humanitiesplusdesign/palladio-timeline-component#c4145760bbfeebeb0321d627021621072d6e2bb9"
 
-"palladio-timespan-component@https://github.com/simonwiles/palladio-timespan-component#1.2.x":
+"palladio-timespan-component@https://github.com/humanitiesplusdesign/palladio-timespan-component#1.2.x":
   version "1.2.0"
-  resolved "https://github.com/simonwiles/palladio-timespan-component#34a4bdf62d4c672e0230ba06e9106125ebf0fffb"
+  resolved "https://github.com/humanitiesplusdesign/palladio-timespan-component#4c93f698f8e4c2e42df4a173e950f07c18a66ab3"
 
-"palladio@https://github.com/simonwiles/palladio#cidr-2019":
+"palladio@https://github.com/humanitiesplusdesign/palladio#1.3.x":
   version "1.3.0"
-  resolved "https://github.com/simonwiles/palladio#85695200593674b15b095384c91569fe2ffb2fd5"
+  resolved "https://github.com/humanitiesplusdesign/palladio#cf28a8c0546c514ef2efb3db1211727d39bdcfe7"
 
 parallel-transform@^1.1.0:
   version "1.2.0"
@@ -3278,26 +3208,6 @@ rc@^1.2.7:
     string_decoder "~1.1.1"
     util-deprecate "~1.0.1"
 
-readable-stream@~1.0.17:
-  version "1.0.34"
-  resolved "https://registry.yarnpkg.com/readable-stream/-/readable-stream-1.0.34.tgz#125820e34bc842d2f2aaafafe4c2916ee32c157c"
-  integrity sha1-Elgg40vIQtLyqq+v5MKRbuMsFXw=
-  dependencies:
-    core-util-is "~1.0.0"
-    inherits "~2.0.1"
-    isarray "0.0.1"
-    string_decoder "~0.10.x"
-
-readable-stream@~1.1.9:
-  version "1.1.14"
-  resolved "https://registry.yarnpkg.com/readable-stream/-/readable-stream-1.1.14.tgz#7cf4c54ef648e3813084c636dd2079e166c081d9"
-  integrity sha1-fPTFTvZI44EwhMY23SB54WbAgdk=
-  dependencies:
-    core-util-is "~1.0.0"
-    inherits "~2.0.1"
-    isarray "0.0.1"
-    string_decoder "~0.10.x"
-
 readdirp@^2.2.1:
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/readdirp/-/readdirp-2.2.1.tgz#0e87622a3325aa33e892285caf8b4e846529a525"
@@ -3364,11 +3274,6 @@ resolve-url@^0.2.1:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/resolve-url/-/resolve-url-0.2.1.tgz#2c637fe77c893afd2a663fe21aa9080068e2052a"
   integrity sha1-LGN/53yJOv0qZj/iGqkIAGjiBSo=
-
-resolve@~0.6.1:
-  version "0.6.3"
-  resolved "https://registry.yarnpkg.com/resolve/-/resolve-0.6.3.tgz#dd957982e7e736debdf53b58a4dd91754575dd46"
-  integrity sha1-3ZV5gufnNt699TtYpN2RdUV13UY=
 
 ret@~0.1.10:
   version "0.1.15"
@@ -3576,11 +3481,6 @@ source-map-url@^0.4.0:
   resolved "https://registry.yarnpkg.com/source-map-url/-/source-map-url-0.4.0.tgz#3e935d7ddd73631b97659956d55128e87b5084a3"
   integrity sha1-PpNdfd1zYxuXZZlW1VEo6HtQhKM=
 
-"source-map@>= 0.1.2":
-  version "0.7.3"
-  resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.7.3.tgz#5302f8169031735226544092e64981f751750383"
-  integrity sha512-CkCj6giN3S+n9qrYiBTX5gystlENnRW5jZeNLHpe6aue+SrHcG5VYwujhW9s4dY31mEGsxBDrHR6oI69fTXsaQ==
-
 source-map@^0.5.3, source-map@^0.5.6:
   version "0.5.7"
   resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.5.7.tgz#8a039d2d1021d22d1ea14c80d8ea468ba2ef3fcc"
@@ -3622,11 +3522,6 @@ static-extend@^0.1.1:
   dependencies:
     define-property "^0.2.5"
     object-copy "^0.1.0"
-
-store@^1.3.14:
-  version "1.3.20"
-  resolved "https://registry.yarnpkg.com/store/-/store-1.3.20.tgz#13ea7e3fb2d6c239868265d686b1d84e99c5be3e"
-  integrity sha1-E+p+P7LWwjmGgmXWhrHYTpnFvj4=
 
 store@^2.0.4:
   version "2.0.12"
@@ -3718,11 +3613,6 @@ string_decoder@^1.0.0:
   integrity sha512-hkRX8U1WjJFd8LsDJ2yQ/wWWxaopEsABU1XfkM8A+j0+85JAGppt16cr1Whg6KIbb4okU6Mql6BOj+uup/wKeA==
   dependencies:
     safe-buffer "~5.2.0"
-
-string_decoder@~0.10.x:
-  version "0.10.31"
-  resolved "https://registry.yarnpkg.com/string_decoder/-/string_decoder-0.10.31.tgz#62e203bc41766c6c28c9fc84301dab1c5310fa94"
-  integrity sha1-YuIDvEF2bGwoyfyEMB2rHFMQ+pQ=
 
 string_decoder@~1.1.1:
   version "1.1.1"
@@ -3854,19 +3744,6 @@ through2@^2.0.0:
     readable-stream "~2.3.6"
     xtend "~4.0.1"
 
-through2@~0.4.0:
-  version "0.4.2"
-  resolved "https://registry.yarnpkg.com/through2/-/through2-0.4.2.tgz#dbf5866031151ec8352bb6c4db64a2292a840b9b"
-  integrity sha1-2/WGYDEVHsg1K7bE22SiKSqEC5s=
-  dependencies:
-    readable-stream "~1.0.17"
-    xtend "~2.1.1"
-
-through@~2.3.4:
-  version "2.3.8"
-  resolved "https://registry.yarnpkg.com/through/-/through-2.3.8.tgz#0dd4c9ffaabc357960b1b724115d7e0e86a2e1f5"
-  integrity sha1-DdTJ/6q8NXlgsbckEV1+Doai4fU=
-
 timers-browserify@^2.0.4:
   version "2.0.11"
   resolved "https://registry.yarnpkg.com/timers-browserify/-/timers-browserify-2.0.11.tgz#800b1f3eee272e5bc53ee465a04d0e804c31211f"
@@ -3908,13 +3785,6 @@ to-regex@^3.0.1, to-regex@^3.0.2:
     extend-shallow "^3.0.2"
     regex-not "^1.0.2"
     safe-regex "^1.1.0"
-
-transformify@~0.1.1:
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/transformify/-/transformify-0.1.2.tgz#9a4f42a154433dd727b80575428a3c9e5489ebf1"
-  integrity sha1-mk9CoVRDPdcnuAV1Qoo8nlSJ6/E=
-  dependencies:
-    readable-stream "~1.1.9"
 
 tslib@^1.9.0:
   version "1.10.0"
@@ -4176,13 +4046,6 @@ xtend@^4.0.0, xtend@~4.0.1:
   resolved "https://registry.yarnpkg.com/xtend/-/xtend-4.0.2.tgz#bb72779f5fa465186b1f438f674fa347fdb5db54"
   integrity sha512-LKYU1iAXJXUgAXn9URjiu+MWhyUXHsvfp7mcuYm9dSUKK0/CjtrUwFAxD82/mCWbtLsGjFIad0wIsod4zrTAEQ==
 
-xtend@~2.1.1:
-  version "2.1.2"
-  resolved "https://registry.yarnpkg.com/xtend/-/xtend-2.1.2.tgz#6efecc2a4dad8e6962c4901b337ce7ba87b5d28b"
-  integrity sha1-bv7MKk2tjmlixJAbM3znuoe10os=
-  dependencies:
-    object-keys "~0.4.0"
-
 y18n@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/y18n/-/y18n-4.0.0.tgz#95ef94f85ecc81d007c264e190a120f0a3c8566b"
@@ -4218,9 +4081,19 @@ yargs@13.2.4:
     y18n "^4.0.0"
     yargs-parser "^13.1.0"
 
-yasgui-utils@^1.0.0, yasgui-utils@^1.4.1:
+yasgui-utils@^1.1.2, yasgui-utils@^1.4.1:
   version "1.6.7"
   resolved "https://registry.yarnpkg.com/yasgui-utils/-/yasgui-utils-1.6.7.tgz#2bcfc5a315688de3ae6057883d9ae342b205f267"
   integrity sha1-K8/FoxVojeOuYFeIPZrjQrIF8mc=
   dependencies:
     store "^2.0.4"
+
+yasgui-yasqe@^1.0.0:
+  version "1.5.4"
+  resolved "https://registry.yarnpkg.com/yasgui-yasqe/-/yasgui-yasqe-1.5.4.tgz#99c574f70a5a1b26bcd58331a7dd2be27b71b508"
+  integrity sha1-mcV09wpaGya81YMxp90r4ntxtQg=
+  dependencies:
+    codemirror "^4.2.0"
+    jquery "~ 1.11.0"
+    twitter-bootstrap-3.0.0 "^3.0.0"
+    yasgui-utils "^1.4.1"

@@ -54,7 +54,7 @@
 
 										<div class="col-lg-12 margin-top">
 											<p class="title">Load .csv or spreadsheet</p>
-											<p>Copy and paste out of your spreadsheets, drag-and-drop to upload tabular data (e.g. .csv, .tab, .tsv), or enter a URL to a tabular data file to create a new Palladio project. <a target="_blank" href="http://hdlab.stanford.edu/palladio">Not sure how to structure your data?</a></p>
+											<p>Copy and paste out of your spreadsheets, drag-and-drop to upload tabular data (e.g. .csv, .tab, .tsv), or enter <a href="https://hdlab.stanford.edu/palladio/tutorials/publicdata/" target="_blank">a URL to a tabular data file</a> to create a new Palladio project. <a target="_blank" href="https://hdlab.stanford.edu/palladio/help/#2">Not sure how to structure your data?</a></p>
 											<textarea ui-codemirror="{ mode : 'text',  lineNumbers : true, lineWrapping: true, onDrop : onDrop }" placeholder="Paste your data or drop a file here" ng-model="text"></textarea>
 											<div class="alert alert-warning" ng-show="parseError">{{parseError}}</div>
 											<a class="btn btn-default" ng-click="parseExtendTable()" ng-disabled="!text">Load</a>

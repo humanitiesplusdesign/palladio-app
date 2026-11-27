@@ -1,0 +1,8 @@
+node_modules
+assets
+.git
+.claude
+sample data
+*.md
+Dockerfile
+.dockerignore

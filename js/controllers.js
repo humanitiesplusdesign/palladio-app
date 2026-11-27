@@ -1,5 +1,8 @@
 angular.module('palladio.controllers', ['palladio.services', 'palladio'])
-	.controller('WorkflowCtrl', function (version, $rootScope, $scope, $location, $controller, $compile, $timeout, dataService, spinnerService, loadService, palladioService, $http, filterService) {
+	.controller('WorkflowCtrl', function (version, $rootScope, $scope, $location, $controller, $compile, $timeout, dataService, spinnerService, loadService, palladioService, $http, filterService, embedService) {
+
+		// Embed mode (read-only single view for iframes); see js/embed.js.
+		$rootScope.embed = embedService;
 
 		spinnerService.pSpin();
 		spinnerService.pHide();
@@ -60,7 +63,7 @@ angular.module('palladio.controllers', ['palladio.services', 'palladio'])
 		$rootScope.location = $location;
 
 		// Property (in addition to the above 3) required by the visualization stage.
-		$scope.layout = 'geo';
+		$scope.layout = embedService.active ? embedService.layout : 'geo';
 
 		// Initialize the scope element that controls filter visibility.
 		$scope.expandedFilters = true;
@@ -73,7 +76,7 @@ angular.module('palladio.controllers', ['palladio.services', 'palladio'])
 			url : 'URL'
 		};
 
-		$scope.version = "1.2";
+		$scope.version = "1.3";
 
 		$scope.$watch(function(){ return $('#footer').html(); }, function(){
 			$('*[data-toggle="tooltip"]').tooltip({container:'body'});
@@ -169,7 +172,11 @@ angular.module('palladio.controllers', ['palladio.services', 'palladio'])
 
 		$scope.loadFile = loadFile;
 
-		if($location.search().file) {
+		if(embedService.active) {
+			// The /visualization route resolve loads the embedded project (see js/app.js),
+			// so just make sure we're on that route.
+			if($location.path() !== '/visualization') $location.path('/visualization');
+		} else if($location.search().file) {
 			// Load the file from the path on the URL.
 			loadFile($location.search().file);
 		} else {
@@ -178,10 +185,13 @@ angular.module('palladio.controllers', ['palladio.services', 'palladio'])
 			spinnerService.hide();
 		}
 
-		// Alert when leaving
-		$(window).bind('beforeunload', function(){
-			return 'By leaving this page you will lose your work.';
-		});
+		// Alert when leaving (not in embed mode: there's no work to lose, and the
+		// prompt would fire inside the host page's iframe).
+		if(!embedService.active) {
+			$(window).bind('beforeunload', function(){
+				return 'By leaving this page you will lose your work.';
+			});
+		}
 
 	})
 
@@ -532,7 +542,10 @@ angular.module('palladio.controllers', ['palladio.services', 'palladio'])
 		$(window).resize(resizeLinks);*/
 	})
 
-	.controller("VisualizationCtrl", function ($scope, $controller, data, $window, $location, $compile, exportService, loadService, palladioService, componentService, dataService) {
+	.controller("VisualizationCtrl", function ($scope, $controller, data, $window, $location, $compile, exportService, loadService, palladioService, componentService, dataService, embedService) {
+
+		// In embed mode views and filters are read-only: no settings panels.
+		var showSettings = !embedService.active;
 
 		$scope.showFilters = function () {
 			if($location.path() === '/upload' || $location.path() === '/link' || $location.path() === '/' || $location.path() === '/index.html') {
@@ -558,22 +571,20 @@ angular.module('palladio.controllers', ['palladio.services', 'palladio'])
 			return $('#filters').children().length;
 		};
 
-    componentService.promiseAdd('graph', "#graph-view-with-settings", {
-      showSettings: true
-    });
-    
-    componentService.promiseAdd('map', "#map-view-with-settings", {
-      showSettings: true
-    });
-    
-    componentService.promiseAdd('table', "#table-view-with-settings", {
-      showSettings: true,
-			maxDisplay: 1000
-    });
-    
-    componentService.promiseAdd('cards', "#card-view-with-settings", {
-      showSettings: true
-    });
+		var views = {
+			graph: { component: 'graph', selector: '#graph-view-with-settings', options: {} },
+			geo:   { component: 'map',   selector: '#map-view-with-settings',   options: {} },
+			table: { component: 'table', selector: '#table-view-with-settings', options: { maxDisplay: 1000 } },
+			grid:  { component: 'cards', selector: '#card-view-with-settings',  options: {} }
+		};
+
+		// Normally all four views are built up front; an embed only builds the one it shows.
+		['graph', 'geo', 'table', 'grid'].forEach(function (layout) {
+			if(embedService.active && layout !== embedService.layout) return;
+			var v = views[layout];
+			componentService.promiseAdd(v.component, v.selector,
+				angular.extend({ showSettings: showSettings }, v.options));
+		});
 
 		// Compile new filters, add them to the WorkflowCtrl scope (parent)
 		// and then append them to the DOM.
@@ -587,7 +598,7 @@ angular.module('palladio.controllers', ['palladio.services', 'palladio'])
 						$('#filters').prepend('<li><div id="' + newTLId + '"></div></li>');
 						componentService.add('timeline', "#"+newTLId, {
 								showControls: true,
-								showSettings: true,
+								showSettings: showSettings,
 								showAccordion: true,
 								height: 250
 							}, $scope);
@@ -597,7 +608,9 @@ angular.module('palladio.controllers', ['palladio.services', 'palladio'])
 					if(!$scope.blurTimeSpan) {
 						var newId = 'palladio-partime-filter-' + Math.floor(Math.random() * 10000);
 						$('#filters').prepend('<li><div id="' + newId + '"></div></li>');
-						componentService.add('timespan', "#"+newId, {}, $scope);
+						componentService.add('timespan', "#"+newId, {
+								showSettings: showSettings
+							}, $scope);
 					}
 					break;
 				case 'facet':
@@ -606,7 +619,7 @@ angular.module('palladio.controllers', ['palladio.services', 'palladio'])
 						$('#filters').prepend('<li><div id="' + newId + '"></div></li>');
 						componentService.add('facet', "#"+newId, {
               showControls: true,
-              showSettings: true,
+              showSettings: showSettings,
               showAccordion: true,
               showDropArea: false,
               height: "200px",
@@ -635,6 +648,11 @@ angular.module('palladio.controllers', ['palladio.services', 'palladio'])
 
 		// If the data is undefined, redirect back to '/'
 		if(!data.metadata || data.metadata.length === 0) {
+			if(embedService.active) {
+				// Reloading would just loop; show the error overlay instead.
+				embedService.error = 'This Palladio project has no data to display.';
+				return;
+			}
 			$window.location = '#/';
 			// Unbind the beforeunload handler so that we don't trigger a dialog on 2nd reload.
 			$(window).unbind('beforeunload');
@@ -775,5 +793,9 @@ angular.module('palladio.controllers', ['palladio.services', 'palladio'])
 		setTimeout(function() {
 			if(loadService.layout()) $scope.setLayout(loadService.layout());
 			loadService.build(palladioService.getStateFunctions());
+			// The view named in an embed URL wins over the layout saved in the file.
+			if(embedService.active) {
+				$scope.$apply(function() { $scope.setLayout(embedService.layout); });
+			}
 		}, 1000);
 	});

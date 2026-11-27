@@ -1,5 +1,6 @@
 {
   "name": "palladio-app",
+  "version": "1.3.0",
   "description": "Palladio website and reference implementation for the Palladio framework.",
   "homepage": "http://hdlab.stanford.edu/palladio",
   "repository": "https://github.com/humanitiesplusdesign/palladio-app",

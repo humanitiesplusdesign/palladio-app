@@ -9,6 +9,8 @@ var app = angular.module('palladioApp', [
 	'palladioApp.directives.file',
 	'palladioApp.directives.refine',
 	'palladioApp.directives.yasgui',
+	'palladioApp.directives.embed',
+	'palladioApp.embed',
 
 	'ui.codemirror',
 	'ui.bootstrap',
@@ -58,8 +60,9 @@ var app = angular.module('palladioApp', [
 				templateUrl: 'html/visualization.html',
 				controller: 'VisualizationCtrl',
 				resolve: {
-					data: function (dataService) {
-						return dataService.getData();
+					data: function (dataService, embedService) {
+						// In embed mode the project is loaded from the URL first.
+						return embedService.active ? embedService.load() : dataService.getData();
 					}
 				}
 			});

@@ -9,3 +9,43 @@
 [data-palladio-map-view] .leaflet-bottom {
 	margin-bottom: 60px;
 }
+/* ---- Embed mode (read-only single view, see js/embed.js) ---- */
+
+body.palladio-embed {
+	padding-top: 0;
+	overflow: hidden;
+}
+
+/* The map sizes itself to window height minus the (hidden) navbar; fill the frame instead. */
+.palladio-embed [data-palladio-map-view] {
+	height: 100vh !important;
+}
+
+/* No adding filters and no selection summary; restored filters stay usable. */
+.palladio-embed #footer > .container-fluid > .row:first-child {
+	display: none;
+}
+
+/* Hide the footer entirely when the project has no saved filters. */
+.palladio-embed #footer.no-filters {
+	display: none;
+}
+
+/* Delete buttons on timeline/timespan filters (facet deletes live in its hidden settings). */
+.palladio-embed #filters [data-ng-click^="$parent.removeFilter"] {
+	display: none !important;
+}
+
+.embed-error {
+	margin: 40px auto;
+	max-width: 560px;
+	padding: 20px;
+	background: #fff;
+	border-left: 4px solid #d9534f;
+}
+
+.embed-code {
+	font-family: 'Inconsolata', monospace;
+	font-size: 12px;
+	word-break: break-all;
+}

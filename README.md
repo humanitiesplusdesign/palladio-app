@@ -27,3 +27,20 @@ To run on the latest version of main Palladio framework for testing purposes:
     ```
 
 2) Then from within your clone of this (`palladio-app`) repo, run `yarn link palladio`.
+
+## Embedding a read-only view
+
+Any project can be shown as a single read-only view (map, graph, table or gallery) for embedding in another site with an `<iframe>`. Viewers can pan, zoom, hover and use the project's saved filters, but can't edit the data or settings.
+
+In the app, open a visualization and click **Share / Embed** to get a link and `<iframe>` code. You can also build links by hand:
+
+```
+index.html#/visualization?embed=map&file=<URL-encoded link to a Palladio .json file>
+index.html#/visualization?embed=graph&data=<base64url of the gzipped Palladio .json>
+```
+
+- `embed` is `map`, `graph`, `table` or `gallery`.
+- `file` loads a project saved with **Download**. The server hosting it must allow cross-origin (CORS) requests, e.g. GitHub Pages or a gist.
+- `data` puts the whole project in the link, so no hosting is needed. It suits small projects. To make one from a saved file: `gzip -c project.json | base64 | tr '+/' '-_' | tr -d '=\n'`.
+
+The project's saved settings and filters are restored, so configure the view and filters before you click Share / Embed (or Download).

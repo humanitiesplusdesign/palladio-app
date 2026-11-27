@@ -20,6 +20,8 @@ There are no tests or linters.
 
 The build uses webpack 4. On Node 17+ it fails with `ERR_OSSL_EVP_UNSUPPORTED` unless you prefix it with `NODE_OPTIONS=--openssl-legacy-provider`. If yarn isn't installed globally, `npx yarn@1 <cmd>` works.
 
+Docker: `docker build --platform linux/amd64 -t palladio-app .` builds the assets with Node, then serves the static files from nginx on port 80. The nginx config is `docker/default.conf.template`, where the image fills in `${FRAME_ANCESTORS}` from the environment. Any new top-level file the page loads must be added to the `COPY` lines in the `Dockerfile`.
+
 To develop against a local checkout of the framework: in the `palladio` repo run `yarn link`, then here run `yarn link palladio`.
 
 ## How the build actually works

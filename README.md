@@ -44,3 +44,35 @@ index.html#/visualization?embed=graph&data=<base64url of the gzipped Palladio .j
 - `data` puts the whole project in the link, so no hosting is needed. It suits small projects. To make one from a saved file: `gzip -c project.json | base64 | tr '+/' '-_' | tr -d '=\n'`.
 
 The project's saved settings and filters are restored, so configure the view and filters before you click Share / Embed (or Download).
+
+## Running with Docker
+
+The `Dockerfile` builds the assets and serves the site with nginx on port 80.
+
+```
+docker build --platform linux/amd64 -t palladio-app .
+docker run -p 8080:80 palladio-app        # then open http://localhost:8080
+```
+
+`--platform linux/amd64` matters when building on an Apple Silicon Mac, because Azure runs amd64 images.
+
+The `FRAME_ANCESTORS` environment variable controls which sites may show Palladio in an iframe. The default `*` allows any site. To restrict it: `-e FRAME_ANCESTORS="'self' https://example.org"`.
+
+### Deploying to Azure
+
+Push the image to an Azure Container Registry, then run it on App Service or Container Apps:
+
+```
+az acr create -g <resource-group> -n <registry> --sku Basic
+az acr login -n <registry>
+docker tag palladio-app <registry>.azurecr.io/palladio-app:latest
+docker push <registry>.azurecr.io/palladio-app:latest
+
+# Container Apps (scales to zero; simplest)
+az containerapp up -g <resource-group> -n palladio \
+  --image <registry>.azurecr.io/palladio-app:latest \
+  --registry-server <registry>.azurecr.io \
+  --ingress external --target-port 80
+```
+
+On App Service (Web App for Containers), point the app at the same image. It listens on port 80, which is App Service's default. Set `FRAME_ANCESTORS` as an app setting or container environment variable.

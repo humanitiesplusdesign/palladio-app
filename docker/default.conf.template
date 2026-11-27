@@ -1,0 +1,21 @@
+# The nginx image fills in ${FRAME_ANCESTORS} from the environment at startup.
+server {
+    listen 80;
+    server_name _;
+    root /usr/share/nginx/html;
+    index index.html;
+
+    gzip on;
+    gzip_types text/css application/javascript application/json image/svg+xml;
+    gzip_min_length 1024;
+
+    location / {
+        try_files $uri $uri/ =404;
+        # File names aren't content-hashed, so make browsers revalidate.
+        add_header Cache-Control "no-cache" always;
+        # Allow embedding in iframes on the sites listed in FRAME_ANCESTORS.
+        add_header Content-Security-Policy "frame-ancestors ${FRAME_ANCESTORS}" always;
+        # Lets Palladio on other sites fetch project files hosted here via file=.
+        add_header Access-Control-Allow-Origin "*" always;
+    }
+}
